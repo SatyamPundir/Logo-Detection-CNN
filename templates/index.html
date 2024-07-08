@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Real/Fake Logo Detector</title>
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+	<link rel="stylesheet" href="../static/css/main.css">
+
+	<style>
+		.bg-dark {
+			background-color: #4B92BB !important;
+		}
+
+		#result {
+			color: #0a1c4ed1;
+		}
+
+		nav {
+			background-color: #254e58;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar">
+		<div class="container">
+			<p class="navbar-brand" href="#">Real/Fake Logo Detector</p>
+		</div>
+	</nav>
+	<div class="container">
+		<div id="content" style="margin-top:2em">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 bd">
+						<h3>Advanced Logo Authentication and Classification</h3>
+						<br>
+						<p>Welcome to our Fake Logo Detection Project, a pioneering initiative leveraging Deep Learning.
+							In a digital age rife with counterfeit logos, we're dedicated to preserving brand
+							authenticity and safeguarding consumers through cutting-edge technology, meticulous
+							algorithms, and extensive training data.</p>
+						<div class="promo-img">
+							<img
+								src="https://www.prudentialuniforms.com/wp-content/uploads/2016/09/Logos-for-Companies.jpg">
+						</div>
+					</div>
+					<div class="col-sm-6 op-container">
+						<div class="input-area">
+							
+							<div id="drop-area">
+
+								<form action="http://localhost:5000/" id="upload-file" method="post"
+									enctype="multipart/form-data">
+									<label for="imageUpload" class="upload--label">
+
+										<div class="input-img">
+											<input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+											<h4 class="input-h4">Upload Image here to Identify the Logo <hr></h4>
+											<div class="view-img" id="img-view">
+												<!-- <h5>Drag and Drop <br><b>(OR)</b><br> Ctrl-V / Paste <br><b>(OR)</b><br> Click here to Upload image</h5> -->
+												<h5>Click here to upload the logo image</h5>
+											</div>
+
+										</div>
+
+									</label>
+								</form>
+							</div>
+
+							<div class="image-section" style="display:none">
+								<div class="img-preview">
+									<div id="imagePreview">
+									</div>
+								</div>
+							</div>
+
+								<div class="btn-predict-class" style="display: none;">
+									<button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button>
+								</div>
+							
+
+							<!-- <div class="loader" style="display:none;">
+							
+							</div> -->
+
+							<div class="lds-facebook" style="display: none;">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+
+							<h3>
+								<span id="result"> </span>
+							</h3>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<footer>
+	<script src="../static/js/main.js" type="text/javascript"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+</footer>
+
+</html>
